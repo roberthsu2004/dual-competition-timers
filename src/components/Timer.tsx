@@ -69,23 +69,23 @@ export default function Timer({ title, color }: TimerProps) {
     <motion.div 
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
-      className="flex flex-col items-center p-8 bg-white rounded-3xl shadow-xl border border-gray-100 w-full max-w-md"
+      className="flex flex-col items-center p-8 bg-slate-900 rounded-3xl shadow-xl shadow-black/30 border border-slate-800 w-full max-w-md"
     >
       <h2 className={`text-2xl font-bold mb-6 ${color}`}>{title}</h2>
       
-      <div className="relative flex items-baseline font-mono font-bold text-7xl md:text-8xl tracking-tighter text-gray-900 mb-10 tabular-nums">
-        {h && <span className="opacity-40">{h}</span>}
+      <div className="relative flex items-baseline font-mono font-bold text-7xl md:text-8xl tracking-tighter text-slate-100 mb-10 tabular-nums">
+        {h && <span className="opacity-45">{h}</span>}
         <span>{m}</span>
-        <span className="mx-1 opacity-20">:</span>
+        <span className="mx-1 opacity-30">:</span>
         <span>{s}</span>
-        <span className="text-3xl ml-2 text-gray-400 w-[1.5ch]">{c}</span>
+        <span className="text-3xl ml-2 text-slate-400 w-[1.5ch]">{c}</span>
       </div>
 
       <div className="flex gap-4 w-full">
         {!isActive ? (
           <button
             onClick={startTimer}
-            className="flex-1 flex items-center justify-center gap-2 py-4 bg-gray-900 text-white rounded-2xl font-semibold hover:bg-gray-800 transition-colors shadow-lg shadow-gray-200"
+            className="flex-1 flex items-center justify-center gap-2 py-4 bg-blue-600 text-white rounded-2xl font-semibold hover:bg-blue-500 transition-colors shadow-lg shadow-blue-900/30"
           >
             <Play size={20} fill="currentColor" />
             開始
@@ -93,7 +93,7 @@ export default function Timer({ title, color }: TimerProps) {
         ) : (
           <button
             onClick={pauseTimer}
-            className="flex-1 flex items-center justify-center gap-2 py-4 bg-orange-500 text-white rounded-2xl font-semibold hover:bg-orange-600 transition-colors shadow-lg shadow-orange-100"
+            className="flex-1 flex items-center justify-center gap-2 py-4 bg-amber-500 text-slate-950 rounded-2xl font-semibold hover:bg-amber-400 transition-colors shadow-lg shadow-amber-900/40"
           >
             <Pause size={20} fill="currentColor" />
             暫停
@@ -102,7 +102,7 @@ export default function Timer({ title, color }: TimerProps) {
         
         <button
           onClick={resetTimer}
-          className="flex items-center justify-center p-4 bg-gray-100 text-gray-600 rounded-2xl hover:bg-gray-200 transition-colors"
+          className="flex items-center justify-center p-4 bg-slate-800 text-slate-300 border border-slate-700 rounded-2xl hover:bg-slate-700 transition-colors"
           title="重設"
         >
           <RotateCcw size={24} />

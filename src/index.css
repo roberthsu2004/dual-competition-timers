@@ -7,7 +7,11 @@
 }
 
 @layer base {
+  :root {
+    color-scheme: dark;
+  }
+
   body {
-    @apply antialiased;
+    @apply antialiased bg-slate-950 text-slate-100;
   }
 }
